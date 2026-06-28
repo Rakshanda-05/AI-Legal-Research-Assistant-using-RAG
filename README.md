@@ -1,130 +1,187 @@
 # ⚖️ AI Legal Research Assistant using RAG
 
-An AI-powered Legal Research Assistant that enables users to upload legal PDF documents and ask natural language questions. The application uses Retrieval-Augmented Generation (RAG) to retrieve relevant legal content and generate context-aware responses using Large Language Models.
+An AI-powered Legal Research Assistant that enables users to upload legal PDF documents and ask natural language questions. The application leverages Retrieval-Augmented Generation (RAG) to retrieve the most relevant legal information from uploaded documents and generate accurate, context-aware responses using Large Language Models.
 
 ---
 
 ## 🚀 Features
 
-- Upload legal PDF documents
-- Automatic document chunking and indexing
-- Semantic search using vector embeddings
-- Context-aware question answering
-- Interactive Streamlit interface
-- Fast AI responses powered by Groq Llama 3.3
+- 📄 Upload and analyze legal PDF documents
+- 🔍 Semantic document search using vector embeddings
+- 🧩 Automatic document chunking and indexing
+- 🤖 AI-powered legal question answering
+- ⚖️ Structured responses with:
+  - Relevant Articles
+  - Legal Analysis
+  - Reasoning
+  - Final Conclusion
+  - Confidence Score
+- 💬 Interactive Streamlit-based chat interface
+- ⚡ Fast inference using Groq Llama 3.3
 
 ---
 
 ## 🏗️ System Architecture
 
+```
 PDF Upload
-↓
-Text Extraction
-↓
+      │
+      ▼
+PDF Loader (PDFPlumber)
+      │
+      ▼
 Text Chunking
-↓
-Vector Embeddings (Ollama - nomic-embed-text)
-↓
-ChromaDB Vector Store
-↓
+(RecursiveCharacterTextSplitter)
+      │
+      ▼
+Embeddings
+(Ollama - nomic-embed-text)
+      │
+      ▼
+FAISS Vector Store
+      │
+      ▼
 Semantic Retrieval
-↓
+      │
+      ▼
 Groq Llama 3.3
-↓
-AI Response
+      │
+      ▼
+Context-Aware AI Response
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Programming
+### Programming Language
 - Python
 
-### Frameworks
+### Frontend
 - Streamlit
+
+### AI Framework
 - LangChain
 
 ### Vector Database
-- ChromaDB
+- FAISS
 
 ### Embedding Model
-- Ollama (nomic-embed-text)
+- Ollama (`nomic-embed-text`)
 
 ### Large Language Model
-- Groq API (Llama 3.3)
+- Groq API (`llama-3.3-70b-versatile`)
+
+### Document Processing
+- PDFPlumber
 
 ---
 
 ## 📂 Project Structure
 
-```
-AI-Legal-Research-Assistant/
+```text
+AI-Legal-Research-Assistant-using-RAG/
 │
-├── app.py
-├── rag_pipeline.py
+├── Frontend.py              # Streamlit UI
+├── rag_pipeline.py          # RAG Pipeline
+├── vector_database.py       # PDF Processing & FAISS
 ├── requirements.txt
-├── chroma_db/
-├── data/
-└── README.md
+├── README.md
+├── .env.example
+├── pdf/
+├── vectorstore/
+└── images/
 ```
 
 ---
 
 ## ⚙️ Installation
 
+### Clone the Repository
+
 ```bash
-git clone https://github.com/Rakshanda-05/AI-Legal-Research-Assistant-using-RAG.git
-
+git clone https://github.com/YOUR_USERNAME/AI-Legal-Research-Assistant-using-RAG.git
 cd AI-Legal-Research-Assistant-using-RAG
+```
 
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-Run
+### Install Ollama
+
+Download and install Ollama from:
+
+https://ollama.com/download
+
+### Pull Required Models
 
 ```bash
-streamlit run app.py
+ollama pull deepseek-r1
+ollama pull nomic-embed-text
+```
+
+### Start Ollama
+
+```bash
+ollama serve
+```
+
+### Configure Environment Variables
+
+Create a `.env` file:
+
+```text
+GROQ_API_KEY=your_groq_api_key
+```
+
+### Run the Application
+
+```bash
+streamlit run Frontend.py
+```
+
+The application will open in your browser at:
+
+```text
+http://localhost:8501
 ```
 
 ---
 
-## 📌 Workflow
+## 📸 Screenshots
 
-1. Upload a legal PDF.
-2. Extract text from the document.
-3. Split text into chunks.
-4. Generate vector embeddings.
-5. Store embeddings in ChromaDB.
-6. Retrieve the most relevant chunks.
-7. Generate an AI response using Groq Llama 3.3.
+Add screenshots of:
 
----
-
-## 🎯 Skills Demonstrated
-
-- Retrieval-Augmented Generation (RAG)
-- Vector Databases
-- Semantic Search
-- LangChain
-- Prompt Engineering
-- Streamlit
-- Document Processing
-- AI Application Development
+- Home Screen
+- PDF Upload
+- AI Chat Interface
+- Legal Analysis Response
 
 ---
 
-## 🔮 Future Improvements
+## 🎥 Demo Video
 
-- Multi-PDF support
-- Citation generation
-- Chat history
-- OCR for scanned PDFs
-- User authentication
+(Add your YouTube or Google Drive demo link here.)
+
+---
+
+## 🔮 Future Enhancements
+
+- Multi-document support
+- Conversation memory
+- Citation highlighting
+- OCR support for scanned PDFs
+- Legal document summarization
+- Case law recommendation system
 
 ---
 
 ## 👩‍💻 Author
 
-Rakshanda Talwekar
+**Rakshanda Talwekar**
 
-LinkedIn: https://linkedin.com/in/rakshanda05
+- LinkedIn: https://www.linkedin.com/in/rakshanda05
+- GitHub: https://github.com/Rakshanda-05
