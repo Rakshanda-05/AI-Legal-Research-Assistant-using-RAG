@@ -1,93 +1,130 @@
-# AI Legal Research Assistant using RAG
+# ⚖️ AI Legal Research Assistant using RAG
 
-## Overview
-
-The AI Legal Research Assistant is a Retrieval-Augmented Generation (RAG) application that enables users to upload legal PDF documents and ask questions in natural language. The system extracts relevant information from uploaded documents using semantic search and generates context-aware answers using a Large Language Model (LLM).
-
-This project demonstrates practical implementation of document retrieval, embeddings, vector databases, and Generative AI for intelligent document question answering.
+An AI-powered Legal Research Assistant that enables users to upload legal PDF documents and ask natural language questions. The application uses Retrieval-Augmented Generation (RAG) to retrieve relevant legal content and generate context-aware responses using Large Language Models.
 
 ---
 
-## Features
+## 🚀 Features
 
-* Upload and process legal PDF documents
-* Automatic PDF text extraction
-* Intelligent document chunking
-* Semantic search using Ollama Embeddings (`nomic-embed-text`)
-* FAISS Vector Database for efficient similarity search
-* Context-aware AI responses using Groq Llama 3.3
-* Interactive Streamlit web interface
-* Retrieval-Augmented Generation (RAG) pipeline
+- Upload legal PDF documents
+- Automatic document chunking and indexing
+- Semantic search using vector embeddings
+- Context-aware question answering
+- Interactive Streamlit interface
+- Fast AI responses powered by Groq Llama 3.3
 
 ---
 
-## Tech Stack
+## 🏗️ System Architecture
 
-* Python
-* Streamlit
-* LangChain
-* LangChain Community
-* FAISS
-* Ollama Embeddings (`nomic-embed-text`)
-* Groq API (Llama 3.3-70B Versatile)
-* PDFPlumber
-
----
-
-## Project Workflow
-
-1. Upload a legal PDF document.
-2. Extract text using PDFPlumber.
-3. Split the document into overlapping chunks.
-4. Generate embeddings using Ollama (`nomic-embed-text`).
-5. Store embeddings in a FAISS vector database.
-6. Retrieve the most relevant document chunks for the user's query.
-7. Generate a context-aware answer using Groq Llama 3.3.
-
----
-
-## Project Architecture
-
-```text
 PDF Upload
-     │
-     ▼
-PDFPlumber
-     │
-     ▼
-Document Chunking
-     │
-     ▼
-Ollama Embeddings (nomic-embed-text)
-     │
-     ▼
-FAISS Vector Database
-     │
-     ▼
-Similarity Search
-     │
-     ▼
+↓
+Text Extraction
+↓
+Text Chunking
+↓
+Vector Embeddings (Ollama - nomic-embed-text)
+↓
+ChromaDB Vector Store
+↓
+Semantic Retrieval
+↓
 Groq Llama 3.3
-     │
-     ▼
+↓
 AI Response
+
+---
+
+## 🛠️ Tech Stack
+
+### Programming
+- Python
+
+### Frameworks
+- Streamlit
+- LangChain
+
+### Vector Database
+- ChromaDB
+
+### Embedding Model
+- Ollama (nomic-embed-text)
+
+### Large Language Model
+- Groq API (Llama 3.3)
+
+---
+
+## 📂 Project Structure
+
+```
+AI-Legal-Research-Assistant/
+│
+├── app.py
+├── rag_pipeline.py
+├── requirements.txt
+├── chroma_db/
+├── data/
+└── README.md
 ```
 
 ---
 
-## Future Improvements
+## ⚙️ Installation
 
-* Support for multiple PDF documents
-* Chat history and conversational memory
-* Source citations for generated responses
-* OCR support for scanned PDFs
-* Cloud deployment
-* User authentication
+```bash
+git clone https://github.com/Rakshanda-05/AI-Legal-Research-Assistant-using-RAG.git
+
+cd AI-Legal-Research-Assistant-using-RAG
+
+pip install -r requirements.txt
+```
+
+Run
+
+```bash
+streamlit run app.py
+```
 
 ---
 
-## Author
+## 📌 Workflow
 
-**Rakshanda Takwekar**
+1. Upload a legal PDF.
+2. Extract text from the document.
+3. Split text into chunks.
+4. Generate vector embeddings.
+5. Store embeddings in ChromaDB.
+6. Retrieve the most relevant chunks.
+7. Generate an AI response using Groq Llama 3.3.
 
-AI • Data Science • Machine Learning • Generative AI
+---
+
+## 🎯 Skills Demonstrated
+
+- Retrieval-Augmented Generation (RAG)
+- Vector Databases
+- Semantic Search
+- LangChain
+- Prompt Engineering
+- Streamlit
+- Document Processing
+- AI Application Development
+
+---
+
+## 🔮 Future Improvements
+
+- Multi-PDF support
+- Citation generation
+- Chat history
+- OCR for scanned PDFs
+- User authentication
+
+---
+
+## 👩‍💻 Author
+
+Rakshanda Talwekar
+
+LinkedIn: https://linkedin.com/in/rakshanda05
